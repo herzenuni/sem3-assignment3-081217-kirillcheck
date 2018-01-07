@@ -1,31 +1,15 @@
+# Шахов Кирилл
+# 2 курс ИВТ 
+# задание - 
+""" считать данных из файла JSON, распарсить (разпознать их) и напечатать 
+несколько значений полей в соответствующем формате"""
 
-
-# С помощью какой библиотеки в Python 3 можно работать с JSON файлами?
-
-# Импортируйте необходимые библиотеки
-
-# import 
-
-# pprint позволяет в понятном для человека виде форматировать 'сложные' структуры данных 
 import pprint
-
-filename = ''
-
+import json
+filename = 'data.json'
 try:
-
-    with open(filename, encoding='utf-8') as data_file:
-        
-        data = #использовать модуль json и метод для считывания данных: (data_file)
-
-except ________:
-
-    print("Файл не найден! Файл должен называться: {}".format(filename))
-    
-    status = 'Файл не найден'
-
-
-pprint(data)
-
-# Вывести в форматированном виде поля: 
-
-# company, email, phone, address
+    with open(filename, encoding='utf-8') as data_file:        
+        data = json.loads(data_file.read())
+except OSError:
+    print("error 404. Или вы неправильно ввели имя")
+pprint.pprint(data)
