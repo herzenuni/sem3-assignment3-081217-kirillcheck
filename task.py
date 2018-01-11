@@ -10,6 +10,6 @@ filename = 'data.json'
 try:
     with open(filename, encoding='utf-8') as data_file:        
         data = json.loads(data_file.read())
-except OSError:
+except OSError: # ошибка, связанная с системой.
     print("error 404. Или вы неправильно ввели имя")
 pprint.pprint(data)
